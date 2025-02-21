@@ -43,7 +43,7 @@ function getUserOption() {
 async function getData() {
     const response = await fetch(postEndpoint);
     if (!response.ok) {
-        return Promise.reject("HTTP error! Status: " + response.status);
+        throw new Error("HTTP error! Status: " + response.status);
     }
     return await response.json();
 }
